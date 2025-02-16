@@ -353,9 +353,11 @@ def translit_to_ascii(translit):
     """Accept an Arabic transliteration of the sort provided by the Reverso
     transliteration API (generally corresponding to ALA-C
     https://www.loc.gov/catdir/cpso/romanization/arabic.pdf) and return it with
-    each non-ASCII character replaced by one or two ASCII characters. This
-    system is inspired by the Arabic chat alphabet
-    (https://en.wikipedia.org/wiki/Arabic_chat_alphabet)."""
+    each non-ASCII character replaced by one or two ASCII characters. 
+    
+    This system is inspired by the Arabic chat alphabet
+    (https://en.wikipedia.org/wiki/Arabic_chat_alphabet).
+    """
     replacements = [
         ("ā", "aa"),
         ("ī", "ii"),
