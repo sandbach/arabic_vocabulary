@@ -6,7 +6,7 @@ This repository contains an [Anki](https://ankiweb.net/) deck for Arabic vocabul
 
 ### Vocabulary
 
-The words in the deck are taken from the [Kelly project](https://spraakbanken.gu.se/projekt/kelly)'s Arabic frequency list, which I found through Wiktionary's [list of Arabic frequency lists](https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists/Arabic). The file [arabic_words.csv](arabic_words.csv) contains the Kelly project data.
+The words in the deck are taken from the [Kelly project](https://spraakbanken.gu.se/projekt/kelly)'s Arabic frequency list, which I found through Wiktionary's [list of Arabic frequency lists](https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists/Arabic). The file [arabic_words.csv](arabic_words.csv) contains the Kelly project data. A list of words sorted by frequency is essential for this sort of deck, as it allows learners to tackle the most common words first.
 
 ### Definitions
 
@@ -20,10 +20,10 @@ In Arabic, short vowels are generally not written. There are only three short vo
 
 Reverso has an API that takes an Arabic word and returns a vocalization and transliteration for it. This is great, but it comes with some problems:
 
-1. Vocalizations for individual words are not necessarily reliable.
+1. Vocalizations for individual words are unreliable.
 2. Vocalizations correspond to a very conservative version of Modern Standard Arabic and indicate some aspects of pronunciation that are not generally used by MSA speakers today, and are never used in Arabic dialects (especially [tanwīn تَنْوِين](https://en.wikipedia.org/wiki/Arabic_diacritics#Tanw%C4%ABn)).
 
-Problem 1 derives from the fact that one sequence of Arabic letters without vowel diacritics can correspond to multiple words, or multiple inflections of the same word, all with different short vowels. Compare the four different words at [كتب -- Wiktionary](https://en.wiktionary.org/wiki/%D9%83%D8%AA%D8%A8); without knowing the context, even a native Arabic speaker could only guess at which vocalization would be suitable. When the Reverso API receives a single Arabic word, it also has to guess.
+Problem 1 derives from the fact that one sequence of Arabic letters without vowel diacritics can correspond to multiple words, or multiple inflections of the same word, all with different short vowels. Compare the four different words at [كتب – Wiktionary](https://en.wiktionary.org/wiki/%D9%83%D8%AA%D8%A8); without knowing the context, even a native Arabic speaker could only guess at which vocalization would be suitable. When the Reverso API receives a single Arabic word, it also has to guess.
 
 My assumption is that when given a longer text, the Reverso API returns more reliable results for each word in the text. The script uses this as the basis for the `poll_vowels` method, which compares the vocalizations for the headword on its own and in each of the example sentences and goes through rounds of 'voting', whereby the headword vocalization has one vote and the example sentence vocalizations each have two votes. If all the vocalizations match, there is no change. If not, they are compared with their final diacritic removed and the one with the fewest votes removed until a single vocalization remains.
 
@@ -65,7 +65,7 @@ The Anki notes have the following fields:
 
 There are two note types, 'Arabic word' and 'Arabic cloze'. Each word is numbered, so that its 'word' and 'cloze' cards end up next to each other. This means that each new card is immediately followed by its first cloze card. If you want to avoid this, you could create a new version of [to_import.csv](to_import.csv) where the cards are in the same order but the numbering is offset by ten, for example.
 
-This is a large deck with more than 27,000 cards. If you were shown ten new cards every day, it would take you around seven and a half years to see them all. But the words are ordered by frequency, so you see the most common and therefore most useful words first.
+Working with Arabic (or right-to-left text generally) in text editors can cause problems. I recommend the font [Readex Pro](https://github.com/ThomasJockin/readexpro), which is highly legible and looks good alongside a fixed-width Latin font. Emacs is capable of handling bidirectional text correctly.
 
 ## Further possibilities
 
