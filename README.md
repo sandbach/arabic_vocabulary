@@ -65,7 +65,7 @@ The Anki notes have the following fields:
 
 There are two note types, 'Arabic word' and 'Arabic cloze'. Each word is numbered, so that its 'word' and 'cloze' cards end up next to each other. This means that each new card is immediately followed by its first cloze card. If you want to avoid this, you could create a new version of [to_import.csv](to_import.csv) where the cards are in the same order but the numbering is offset by ten, for example.
 
-Working with Arabic (and right-to-left text in general) in text editors can cause problems. I recommend the font [Readex Pro](https://github.com/ThomasJockin/readexpro), which is highly legible and looks good alongside a fixed-width Latin font. Emacs is capable of handling bidirectional text correctly.
+Working with Arabic (and right-to-left text in general) in text editors can cause problems. I recommend the font [Readex Pro](https://fonts.google.com/specimen/Readex+Pro), which is highly legible and looks good alongside a fixed-width Latin font. Emacs is capable of handling bidirectional text correctly.
 
 ## Further possibilities
 
