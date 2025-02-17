@@ -16,7 +16,7 @@ The function `reverso_defs` in the Python script takes a word and scrapes the Re
 
 ### Vocalization and transliteration
 
-In Arabic, short vowels are generally not written. There are only three short vowels in Arabic, so native readers can generally deduce the appropriate vowel from context. This is not terribly useful for learners, however. Writing for children and foreign learners (and in the Qur'an, where accurate recitation is essential) employs a system of [diacritics](https://en.wikipedia.org/wiki/Arabic_diacritics#harakat) to mark short vowels. The Kelly project list does not include these diacritics, so I needed a way to find the vocalization for arbitrary Arabic words and sentences.
+In Arabic, short vowels are generally not written. There are only three short vowels in Arabic, so native readers can usually deduce the appropriate vowel from context. This is not terribly useful for learners, however. Writing for children and foreign learners (and in the Qur'an, where accurate recitation is essential) employs a system of [diacritics](https://en.wikipedia.org/wiki/Arabic_diacritics#harakat) to mark short vowels. The Kelly project list does not include these diacritics, so I needed a way to find the vocalization for arbitrary Arabic words and sentences.
 
 Reverso has an API that takes an Arabic word and returns a vocalization and transliteration for it. This is great, but it comes with some problems:
 
@@ -65,7 +65,7 @@ The Anki notes have the following fields:
 
 There are two note types, 'Arabic word' and 'Arabic cloze'. Each word is numbered, so that its 'word' and 'cloze' cards end up next to each other. This means that each new card is immediately followed by its first cloze card. If you want to avoid this, you could create a new version of [to_import.csv](to_import.csv) where the cards are in the same order but the numbering is offset by ten, for example.
 
-Working with Arabic (or right-to-left text generally) in text editors can cause problems. I recommend the font [Readex Pro](https://github.com/ThomasJockin/readexpro), which is highly legible and looks good alongside a fixed-width Latin font. Emacs is capable of handling bidirectional text correctly.
+Working with Arabic (and right-to-left text in general) in text editors can cause problems. I recommend the font [Readex Pro](https://github.com/ThomasJockin/readexpro), which is highly legible and looks good alongside a fixed-width Latin font. Emacs is capable of handling bidirectional text correctly.
 
 ## Further possibilities
 
